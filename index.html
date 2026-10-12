@@ -71,6 +71,8 @@ window.onerror = function(message, source, line) {
 </script>
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <script>
+  window.crmScriptLoaded = true;
+alert('Główny skrypt CRM uruchomiony');
 const $=id=>document.getElementById(id);
 const money=n=>(Number(n)||0).toLocaleString('pl-PL',{style:'currency',currency:'PLN',maximumFractionDigits:0});
 const today=()=>new Date().toISOString().slice(0,10);
