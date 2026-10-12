@@ -23,7 +23,9 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid
     <div class="field"><label>Hasło</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="hasło"></div>
     <div id="authError" style="color:var(--red);font-size:13px;margin:8px 0;display:none"></div>
     <button class="primary" id="authSubmit" style="width:100%" onclick="signIn()">Zaloguj się</button>
-    <button class="ghost" id="authToggle" style="width:100%;margin-top:8px" data-mode="login" onclick="var t=document.getElementById('authTitle'),s=document.getElementById('authSubmit'),n=this.dataset.mode!=='signup';this.dataset.mode=n?'signup':'login';t.textContent=n?'Utwórz konto Pro Music CRM':'Zaloguj się do Pro Music CRM';s.textContent=n?'Utwórz konto':'Zaloguj się';this.textContent=n?'Mam już konto':'Utwórz konto'">Utwórz konto</button>
+    
+    <button class="ghost" id="authToggle" style="width:100%;margin-top:8px" onclick="toggleAuthMode()">Utwórz konto</button>
+
   </div>
 </div>
 <div class="app" id="crmApp" style="display:none">
