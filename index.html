@@ -86,6 +86,8 @@ async function signIn(){
  if(authMode==='signup'&&!r.data.session)return authError('Konto utworzone. Jeśli wymagane jest potwierdzenie e-mail, potwierdź je i zaloguj się.');
  currentUser=r.data.user;await startCRM();}catch(e){authError(e.message||'Nie udało się zalogować.')}finally{$('authSubmit').disabled=false}}
 async function signOut(){await supabase.auth.signOut();currentUser=null;$('crmApp').style.display='none';$('authScreen').style.display='flex'}
+  window.signIn = signIn;
+window.toggleAuthMode = toggleAuthMode;
 async function startCRM(){$('authScreen').style.display='none';$('crmApp').style.display='grid';setSyncStatus('Pobieranie danych…');try{await loadRemoteData();renderAll();setSyncStatus('Połączono z bazą online')}catch(e){setSyncStatus('Błąd synchronizacji');showToast('Błąd bazy: '+(e.message||e))}}
 function mapClient(r){return{id:r.id,name:r.name||'',phone:r.phone||'',email:r.email||'',notes:r.notes||'',created:(r.created_at||today()).slice(0,10)}}
 function mapEvent(r,paid){return{id:r.id,date:r.event_date||'',type:r.event_type||r.title||'Impreza',clientId:r.client_id||'',place:r.location||'',price:Number(r.price)||0,paid:Number(paid)||0,status:r.status||'Zapytanie',dueDate:'',notes:r.notes||'',created:(r.created_at||today()).slice(0,10)}}
