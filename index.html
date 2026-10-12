@@ -64,7 +64,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid
 </main></div>
 <div class="modalback" id="modalback" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modalhead"><h2 id="modalTitle">Dodaj</h2><button class="ghost" onclick="closeModal()">✕</button></div><div id="modalContent"></div><div class="modalfoot" id="modalFoot"></div></div></div>
 <div id="toast" style="position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#242a35;border:1px solid #454d5d;padding:12px 18px;border-radius:12px;display:none;z-index:20;box-shadow:0 8px 30px #0008"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" onerror="this.onerror=null;this.src='https://unpkg.com/@supabase/supabase-js@2'"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script>
 const $=id=>document.getElementById(id);
 const money=n=>(Number(n)||0).toLocaleString('pl-PL',{style:'currency',currency:'PLN',maximumFractionDigits:0});
